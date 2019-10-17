@@ -1,0 +1,43 @@
+.cc-chart-element__heading {
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+    padding: 6px 2px;
+    padding-bottom: 24px;
+  }
+  .cc-chart-element__heading .axis-label {
+    vertical-align: top;
+    flex: 1;
+    font-size: 12px;
+  }
+  .cc-chart-element__heading .cc-chart-title {
+    font-weight: normal;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .cc-chart-element__doughnut .canvas-wrapper {
+    position: relative;
+  }
+  .cc-chart-element__doughnut .cc-chart-element__heading {
+    justify-content: flex-end;
+  }
+  .cc-chart-element__doughnut .cc-chart-element__center {
+    color: #444444;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+  .cc-chart-element__doughnut .cc-chart-element__center .label.title {
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .cc-chart-element__doughnut .cc-chart-element__center .label {
+    line-height: 1.4;
+    font-size: 13px;
+  }
+  .cc-chart-element__doughnut .cc-chart-element__center .value {
+    font-size: 26px;
+    font-weight: bold;
+  }

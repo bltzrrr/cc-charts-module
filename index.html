@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./cc-charts-plugin.css">
+    <title>CC charts plugin</title>
+</head>
+
+<body>
+    <canvas id="someBarChart"></canvas>
+    <canvas id="someDoughnutChart"></canvas>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+<script src="./cc-charts-plugin.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        const barData = [{
+            name: 'Stockholm',
+            data: [{
+                label: 'Total',
+                color: '#78d2ff',
+                value: 1200
+            }, {
+                label: '0-5 years',
+                color: '#3f718a',
+                value: 1100
+            }, {
+                label: '5-10 years',
+                color: '#1c2d36',
+                value: 100
+            }]
+        }, {
+            name: 'London',
+            data: [{
+                label: 'Total',
+                color: '#78d2ff',
+                value: 1200
+            }, {
+                label: '0-5 years',
+                color: '#3f718a',
+                value: 900
+            }, {
+                label: '5-10 years',
+                color: '#1c2d36',
+                value: 300
+            }]
+        }];
+
+        let doughnutData = [{
+            name: 'Stockholm',
+            percentage: 24.22,
+            color: '#78d2ff'
+        }, {
+            name: 'London',
+            percentage: 25.78,
+            color: '#3f718a'
+        }, {
+            name: 'Rome',
+            percentage: 33,
+            color: '#1c2d36'
+        }, {
+            name: 'Madrid',
+            percentage: 17,
+            color: '#000000'
+        }];
+
+        let chartOptions = {
+            type: 'bar',
+            data: barData,
+            height: 680,
+            width: 680,
+            heading: { title: 'Bar title', axisLabel: 'Label test' }
+        };
+
+        let doughnutChartOptions = {
+            type: 'doughnut',
+            data: doughnutData,
+            heading: { title: 'Doughnut test' },
+            height: 680,
+            width: 680,
+            centerText: {
+                title: 'City name',
+                label: 'Total Market Size',
+                value: '$1234000',
+                subText: 'billion'
+            }
+        };
+
+        $('#someBarChart').initChart(chartOptions);
+        $('#someDoughnutChart').initChart(doughnutChartOptions);
+    });
+</script>
+
+</html>
